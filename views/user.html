@@ -1,0 +1,14 @@
+
+{% extends "./layout.html" %}
+{% block content %}
+<div class='jumbotron'>
+    <h4>{{title}}</h4>
+    <br>
+    <h5>Twitter Handle: {{handle}}</h5>
+    <br>
+    <h5>Tweet (255 characters):</h5>
+    <p>{{tweet}}</p>
+    <br>
+    <p><a href='/users'>Return To Users Page</a></p>
+</div>
+{% endblock %}

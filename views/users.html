@@ -1,0 +1,32 @@
+{% extends './layout.html' %}
+{% block content %}
+  <form action='/users' method='POST'>
+    <div class='form-group'>  
+      <br>
+      <h5><b>Create Your New Twitter Profile!</b></h5>
+      <br>
+      <input class="form-control" name='name' placeholder="Enter Your Full Name" />
+      <br>
+      <input class="form-control" name='handle' placeholder="Enter Your New Twitter Handle" />
+      <br>
+      <input class="form-control" name='tweet' placeholder="What is happening???" />
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    <br>
+    <br>
+    <br>
+    <h5><b>Checkout Recent Tweeters!</b></h5>
+    <br>
+  </form>
+  <ul class='list-group'>
+    {% for user in users %}
+    <li class='list-group-item'>
+      <b><a href="/users/{{user.id}}"> {{user.name}} </a></b>
+      <form method="POST" action="/users/{{user.id}}?_method=DELETE">
+      <br>
+      <button class='btn btn-danger'>Delete</button>
+    </li>
+    </form>
+    {% endfor %}
+  </ul>
+{% endblock %}
